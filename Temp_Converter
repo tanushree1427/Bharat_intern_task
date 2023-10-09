@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>temperatureConverter</title>
+    <!-- <link rel="icon" type="image/x-icon" href="html css.jpg"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather&family=Playfair+Display:wght@500&family=Roboto:wght@300&display=swap"
+        rel="stylesheet">
+
+</head>
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+        font-family: 'Merriweather', serif;
+        font-family: 'Playfair Display', serif;
+        font-family: 'Roboto', sans-serif;
+        color: rgb(17, 17, 17);
+
+
+    }
+
+    .container {
+        background-color: aquamarine(42, 12, 48);
+        border: 50px solid rgba(11, 236, 199, 0.774);
+    }
+
+    form {
+        text-align: center;
+        justify-content: center;
+        margin-top: 200px;
+        background-color: rgb(32, 233, 233);
+        width: 400px;
+        height: 400px;
+        position: relative;
+        bottom: 150px;
+        left: 510px;
+
+
+    }
+
+    h1 {
+        text-align: center;
+        margin-top: 30px;
+        text-decoration: underline;
+
+    }
+
+    .cel {
+        margin: 10px;
+
+    }
+
+    .center {
+        justify-content: center;
+        padding-top: 90px;
+    }
+
+    .fah {
+        margin-bottom: 30px;
+    }
+
+    .btn {
+        background-color: rgb(239, 245, 240);
+        margin: 20px;
+        padding: 10px;
+        font-size: 20px;
+        color: gray;
+
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <h1><b style="color: rgb(177, 167, 167);">Temperature converter</b></h1>
+            <form action="">
+                <div class="center">
+                    <div class="cel"><label for="celcius" style="font-size: 23px;font-weight: 100;">Enter
+                            tempertaure:</label>
+                        <input type="number" id="celcius" name="celcius" placeholder="in celcius"
+                            oninput="temperatureConverter(this.value)" onchange="temperatureConverter(this.value)">
+                        <p>Fahrenheit: <span id="outputFahrenheit"></span></p>
+                    </div>
+                    <div class="fah"><label for="fahrenheit" style="font-size: 23px;font-weight: 100;">Enter
+                            tempertaure:</label>
+                        <input type="number" id="fahrenheit" name="fahrenheit" placeholder="in fahrenheit"
+                            oninput="temperatureConverter1(this.value)" onchange="temperatureConverter(this.value)">
+                        <p>Celcius: <span id="outputCelcius"></span></p>
+                    </div>
+                </div>
+                <input type="reset" id="btn" name="btn" class="btn" value="reset">
+            </form>
+        </div>
+    </div>
+    <script>
+        function temperatureConverter(valNum) {
+            valNum = parseFloat(valNum);
+            document.getElementById("outputFahrenheit").innerHTML = (valNum * 1.8) + 32;
+        }
+        function temperatureConverter1(valNum) {
+            valNum = parseFloat(valNum);
+            document.getElementById("outputCelcius").innerHTML = (valNum - 32) / 1.8;
+        }
+    </script>
+
+</body>
+
+</html>
